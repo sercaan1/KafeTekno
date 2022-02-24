@@ -67,26 +67,45 @@ namespace KafeTekno.UI
             this.btnEkle.TabIndex = 1;
             this.btnEkle.Text = "Ekle";
             this.btnEkle.UseVisualStyleBackColor = true;
+            this.btnEkle.Click += new System.EventHandler(this.btnEkle_Click);
             // 
             // dgvSiparis
             // 
+            this.dgvSiparis.AllowUserToAddRows = false;
             this.dgvSiparis.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvSiparis.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvSiparis.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvSiparis.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSiparis.Location = new System.Drawing.Point(20, 101);
             this.dgvSiparis.Margin = new System.Windows.Forms.Padding(5);
+            this.dgvSiparis.MultiSelect = false;
             this.dgvSiparis.Name = "dgvSiparis";
+            this.dgvSiparis.ReadOnly = true;
+            this.dgvSiparis.RowHeadersVisible = false;
+            this.dgvSiparis.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvSiparis.Size = new System.Drawing.Size(639, 533);
             this.dgvSiparis.TabIndex = 2;
+            this.dgvSiparis.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.dgvSiparis_UserDeletingRow);
             // 
             // nudAdet
             // 
             this.nudAdet.Location = new System.Drawing.Point(271, 51);
             this.nudAdet.Margin = new System.Windows.Forms.Padding(5);
+            this.nudAdet.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nudAdet.Name = "nudAdet";
             this.nudAdet.Size = new System.Drawing.Size(114, 27);
             this.nudAdet.TabIndex = 3;
+            this.nudAdet.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // cboUrun
             // 
@@ -152,6 +171,7 @@ namespace KafeTekno.UI
             this.btnİptal.TabIndex = 9;
             this.btnİptal.Text = "SİPARİŞ İPTAL";
             this.btnİptal.UseVisualStyleBackColor = false;
+            this.btnİptal.Click += new System.EventHandler(this.btnİptal_Click);
             // 
             // btnOdemeAl
             // 
@@ -165,6 +185,7 @@ namespace KafeTekno.UI
             this.btnOdemeAl.TabIndex = 10;
             this.btnOdemeAl.Text = "ÖDEME AL";
             this.btnOdemeAl.UseVisualStyleBackColor = false;
+            this.btnOdemeAl.Click += new System.EventHandler(this.btnOdemeAl_Click);
             // 
             // btnAnasayfa
             // 
@@ -177,6 +198,7 @@ namespace KafeTekno.UI
             this.btnAnasayfa.TabIndex = 11;
             this.btnAnasayfa.Text = "ANASAYAFAYA DÖN";
             this.btnAnasayfa.UseVisualStyleBackColor = false;
+            this.btnAnasayfa.Click += new System.EventHandler(this.btnAnasayfa_Click);
             // 
             // lblMasaNo
             // 
