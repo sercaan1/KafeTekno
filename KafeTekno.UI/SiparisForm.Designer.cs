@@ -158,6 +158,7 @@ namespace KafeTekno.UI
             this.btnTasi.TabIndex = 8;
             this.btnTasi.Text = "Taşı";
             this.btnTasi.UseVisualStyleBackColor = true;
+            this.btnTasi.Click += new System.EventHandler(this.btnTasi_Click);
             // 
             // btnİptal
             // 
@@ -259,6 +260,7 @@ namespace KafeTekno.UI
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "SiparisForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Masa 00";
             ((System.ComponentModel.ISupportInitialize)(this.dgvSiparis)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudAdet)).EndInit();

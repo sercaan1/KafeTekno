@@ -46,7 +46,7 @@ namespace KafeTekno.UI
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(5);
             this.splitContainer1.Name = "splitContainer1";
             this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -69,11 +69,11 @@ namespace KafeTekno.UI
             // 
             this.dgvSiparisler.AllowUserToAddRows = false;
             this.dgvSiparisler.AllowUserToDeleteRows = false;
-            this.dgvSiparisler.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvSiparisler.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvSiparisler.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvSiparisler.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSiparisler.Location = new System.Drawing.Point(5, 41);
-            this.dgvSiparisler.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.dgvSiparisler.Margin = new System.Windows.Forms.Padding(5);
             this.dgvSiparisler.MultiSelect = false;
             this.dgvSiparisler.Name = "dgvSiparisler";
             this.dgvSiparisler.ReadOnly = true;
@@ -108,11 +108,11 @@ namespace KafeTekno.UI
             // 
             this.dgvSiparisDetaylar.AllowUserToAddRows = false;
             this.dgvSiparisDetaylar.AllowUserToDeleteRows = false;
-            this.dgvSiparisDetaylar.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvSiparisDetaylar.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvSiparisDetaylar.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvSiparisDetaylar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSiparisDetaylar.Location = new System.Drawing.Point(5, 44);
-            this.dgvSiparisDetaylar.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.dgvSiparisDetaylar.Margin = new System.Windows.Forms.Padding(5);
             this.dgvSiparisDetaylar.MultiSelect = false;
             this.dgvSiparisDetaylar.Name = "dgvSiparisDetaylar";
             this.dgvSiparisDetaylar.ReadOnly = true;
@@ -128,8 +128,9 @@ namespace KafeTekno.UI
             this.ClientSize = new System.Drawing.Size(858, 634);
             this.Controls.Add(this.splitContainer1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "GecmisSiparislerForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "GecmisSiparislerForm";
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();

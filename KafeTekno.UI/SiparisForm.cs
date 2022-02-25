@@ -13,6 +13,8 @@ namespace KafeTekno.UI
 {
     public partial class SiparisForm : Form
     {
+        public event EventHandler<MasaTasindiEventArgs> MasaTasindi;
+
         private readonly KafeVeri _db;
         private readonly Siparis _siparis;
         private readonly BindingList<SiparisDetay> _blSiparisDetaylar;
@@ -44,6 +46,19 @@ namespace KafeTekno.UI
         {
             this.Text = $"Masa {_siparis.MasaNo:00} (Açılış Zamanı: {_siparis.AcilisZamani})";
             lblMasaNo.Text = _siparis.MasaNo.ToString("00");
+
+            cmoMasaNo.DataSource = Enumerable.Range(1, _db.MasaAdet)
+                .Where(x => !_db.aktifSiparisler
+                .Any(s => s.MasaNo == x))
+                .ToList();
+            //cmoMasaNo.Items.Clear();
+            //for (int i = 1; i <= _db.MasaAdet; i++)
+            //{
+            //    if (!_db.aktifSiparisler.Any(x => x.MasaNo == i))
+            //    {
+            //        cmoMasaNo.Items.Add(i);
+            //    }
+            //}
         }
 
         private void btnEkle_Click(object sender, EventArgs e)
@@ -66,17 +81,16 @@ namespace KafeTekno.UI
         private void dgvSiparis_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
         {
             DialogResult dr = MessageBox.Show(
-                text: "Emin misiniz?", 
-                caption: "Ürün siliniyor..", 
-                buttons: MessageBoxButtons.YesNo, 
-                icon: MessageBoxIcon.Question, 
+                text: "Emin misiniz?",
+                caption: "Ürün siliniyor..",
+                buttons: MessageBoxButtons.YesNo,
+                icon: MessageBoxIcon.Question,
                 defaultButton: MessageBoxDefaultButton.Button2);
             if (dr == DialogResult.Cancel)
             {
                 e.Cancel = true;
             }
         }
-
         private void btnAnasayfa_Click(object sender, EventArgs e)
         {
             Close();
@@ -99,6 +113,21 @@ namespace KafeTekno.UI
             _db.aktifSiparisler.Remove(_siparis);
             _db.gecmisSiparisler.Add(_siparis);
             Close();
+        }
+
+        private void btnTasi_Click(object sender, EventArgs e)
+        {
+            if (cmoMasaNo.SelectedItem == null) return;
+            int eski = _siparis.MasaNo;
+            int yeni = (int)cmoMasaNo.SelectedItem;
+            _siparis.MasaNo = yeni;
+            MasaNoGuncelle();
+            if (MasaTasindi != null)
+            {
+                MasaTasindi(this, new MasaTasindiEventArgs(eski, yeni));
+            }
+            //AnaForm anaForm = (AnaForm)Owner;
+            //anaForm.MasaTasi(eski, yeni);
         }
     }
 }
